@@ -1,5 +1,6 @@
 package binarysearch;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
 // efjwenfj(({{123jfsdb{P[[})))fskmdfgs)){}}]
 public class BinarySearch {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<Integer> integerArrayList = new ArrayList<>();
         integerArrayList.add(1);
         integerArrayList.add(2);
@@ -21,7 +22,7 @@ public class BinarySearch {
         System.out.println(binarySearch(integers, 15, 0, 5));
     }
 
-    public static Integer binarySearch(Integer[] sortedArray, int key, int low, int high) {
+    public static Integer binarySearch (Integer[] sortedArray, int key, int low, int high) throws IOException {
         Integer index = -1;
 
         while (low <= high) {

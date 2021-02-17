@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 import stack.StackService;
 
+import java.io.IOException;
+
 import static org.junit.Assert.assertEquals;
 
 //Selenium web browser
@@ -18,16 +20,22 @@ public class StackServiceTest {
     }
 
     @Test
-    public void correctInitialStringTest() {
+    public void correctInitialStringTest() throws IOException {
         String correctStatement = "(({{}}))";
         assertEquals(true,
                 stackService.isStatementCorrect(correctStatement));
     }
 
     @Test
-    public void incorrectInitialStringTest() {
+    public void incorrectInitialStringTest() throws IOException {
         String correctStatement = "(({{((())((((}}))";
         assertEquals(false,
+                stackService.isStatementCorrect(correctStatement));
+    }
+    @Test
+    public void nullInitialStringTest() throws IOException {
+        String correctStatement = "";
+        assertEquals(true,
                 stackService.isStatementCorrect(correctStatement));
     }
 }
